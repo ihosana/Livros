@@ -11,19 +11,37 @@ import com.example.livros.model.Book
 
 class Listar : AppCompatActivity() {
    lateinit var binding:ActivityListarBinding
+   var i :Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_listar)
-//
-//        val db = Room.databaseBuilder(
-//            applicationContext,
-//            BancoDeDados::class.java,
-//            "banco2.sqlite"
-//        ).fallbackToDestructiveMigration()
-//            .allowMainThreadQueries().build()
-//        db.bookDao().getAll().forEach { Log.i("APPROOM", it.toString()) }
+        val db = Room.databaseBuilder(
+            applicationContext,
+            BancoDeDados::class.java,
+            "bancoDeDados.sqlite"
+        ).fallbackToDestructiveMigration()
+            .allowMainThreadQueries().build()
+         binding.tituloView.text=db.bookDao().getAll().get(i).titulo
+         binding.textoView.text=db.bookDao().getAll().get(i).autor
+         binding.anoView.text=db.bookDao().getAll().get(i).ano.toString()
+         binding.notaView.text=db.bookDao().getAll().get(i).nota
 
+        binding.button5.setOnClickListener {
+            binding.tituloView.text=db.bookDao().getAll().get(i+1).titulo
+            binding.textoView.text=db.bookDao().getAll().get(i+1).autor
+            binding.anoView.text=db.bookDao().getAll().get(i+1).ano.toString()
+            binding.notaView.text=db.bookDao().getAll().get(i+1).nota
+            i++;
+        }
+
+        binding.button3.setOnClickListener {
+            binding.tituloView.text=db.bookDao().getAll().get(i-1).titulo
+            binding.textoView.text=db.bookDao().getAll().get(i-1).autor
+            binding.anoView.text=db.bookDao().getAll().get(i-1).ano.toString()
+            binding.notaView.text=db.bookDao().getAll().get(i-1).nota
+            i--;
+        }
 
     }
 }

@@ -89,6 +89,18 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:text="Ano:"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/nota"
+            app:layout_constraintEnd_toEndOf="@+id/nota"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/nota" />
+
+        <TextView
             android:id="@+id/titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,16 +112,17 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/autor"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.99" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textoView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/autor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.011"
             app:layout_constraintStart_toEndOf="@+id/autor"
             app:layout_constraintTop_toTopOf="@+id/autor"
             app:layout_constraintVertical_bias="1.0" />
@@ -119,6 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/nota"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.003"
@@ -130,48 +144,24 @@
             android:id="@+id/tituloView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/titulo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toEndOf="@+id/titulo"
-            app:layout_constraintTop_toTopOf="@+id/titulo"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/titulo" />
 
         <TextView
             android:id="@+id/autor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="36dp"
             android:text="Autor:"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/ano"
             app:layout_constraintEnd_toEndOf="@+id/ano"
-            app:layout_constraintHorizontal_bias="0.23"
+            app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="@+id/ano" />
-
-        <TextView
-            android:id="@+id/ano"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="44dp"
-            android:text="Ano:"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/nota"
-            app:layout_constraintEnd_toEndOf="@+id/nota"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/nota" />
-
-        <TextView
-            android:id="@+id/anoView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ano"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toEndOf="@+id/ano"
-            app:layout_constraintTop_toTopOf="@+id/ano"
-            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/nota"
@@ -182,11 +172,23 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
+            app:layout_constraintHorizontal_bias="0.173"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.851"
             tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/anoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ano"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.011"
+            app:layout_constraintStart_toEndOf="@+id/ano"
+            app:layout_constraintTop_toTopOf="@+id/ano" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
