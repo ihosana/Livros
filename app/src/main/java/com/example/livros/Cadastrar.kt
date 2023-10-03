@@ -37,7 +37,7 @@ class Cadastrar : AppCompatActivity() {
             var nota = binding.ratingBar2.rating.toString()
              val b = Book( titulo,  autor, ano,  nota)
             db.bookDao().inserir(b)
-            val i= Intent(this, Listar::class.java)
+            val i= Intent(this, MainActivity::class.java)
             startActivity(i)
 
             Toast.makeText(this, "Cadastrado com sucesso.", Toast.LENGTH_SHORT).show()

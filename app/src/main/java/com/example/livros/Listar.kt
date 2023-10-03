@@ -3,6 +3,7 @@ package com.example.livros
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.room.Room
 import com.example.livros.database.BancoDeDados
@@ -28,19 +29,33 @@ class Listar : AppCompatActivity() {
          binding.notaView.text=db.bookDao().getAll().get(i).nota
 
         binding.button5.setOnClickListener {
-            binding.tituloView.text=db.bookDao().getAll().get(i+1).titulo
-            binding.textoView.text=db.bookDao().getAll().get(i+1).autor
-            binding.anoView.text=db.bookDao().getAll().get(i+1).ano.toString()
-            binding.notaView.text=db.bookDao().getAll().get(i+1).nota
-            i++;
+            var tamanho= Integer.parseInt( db.bookDao().getAll().size.toString())
+           if(i < tamanho-1){
+               binding.tituloView.text=db.bookDao().getAll().get(i+1).titulo
+               binding.textoView.text=db.bookDao().getAll().get(i+1).autor
+               binding.anoView.text=db.bookDao().getAll().get(i+1).ano.toString()
+               binding.notaView.text=db.bookDao().getAll().get(i+1).nota
+               i++;
+           }else{
+               Toast.makeText(this, "Limite da lsita de livros alcançado.", Toast.LENGTH_SHORT).show()
+
+           }
+
+
+
         }
 
         binding.button3.setOnClickListener {
-            binding.tituloView.text=db.bookDao().getAll().get(i-1).titulo
-            binding.textoView.text=db.bookDao().getAll().get(i-1).autor
-            binding.anoView.text=db.bookDao().getAll().get(i-1).ano.toString()
-            binding.notaView.text=db.bookDao().getAll().get(i-1).nota
-            i--;
+          if(i>1){
+              binding.tituloView.text=db.bookDao().getAll().get(i-1).titulo
+              binding.textoView.text=db.bookDao().getAll().get(i-1).autor
+              binding.anoView.text=db.bookDao().getAll().get(i-1).ano.toString()
+              binding.notaView.text=db.bookDao().getAll().get(i-1).nota
+              i--;
+          }else{
+              Toast.makeText(this, "Inicio da lista alcançado.", Toast.LENGTH_SHORT).show()
+
+          }
         }
 
     }
